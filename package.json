@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhanxp/angular-search-input.git"
+    "url": "git+https://github.com/kuizhaoyi/angular-search-input.git"
   },
   "author": "zhanxp@me.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhanxp/angular-search-input/issues"
+    "url": "https://github.com/kuizhaoyi/angular-search-input/issues"
   },
-  "homepage": "https://github.com/zhanxp/angular-search-input#readme",
+  "homepage": "https://github.com/kuizhaoyi/angular-search-input#readme",
   "dependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
