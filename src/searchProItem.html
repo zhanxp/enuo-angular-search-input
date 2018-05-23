@@ -1,0 +1,39 @@
+<tr class="form-group">
+    <td class="item-0">
+        <a class="btn btn-default" ng-show="searchItemIndex > 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()">+</a>
+    </td>
+    <td class="item-1">
+        <span ng-show="searchItemIndex>0">
+                <ui-select theme="selectize" ng-model="searchItem.logic" title="">
+                    <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
+                    <ui-select-choices repeat="item.val as item in logicList">
+                        <div ng-bind-html="item.title"></div>
+                    </ui-select-choices>
+                </ui-select>
+         </span>
+        <a class="btn btn-default" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()">+</a>
+    </td>
+    <td class="item-2">
+        <ui-select theme="selectize" ng-model="searchItem.attr" title="输入要搜索的字段">
+            <ui-select-match placeholder="输入要搜索的字段">{{$select.selected.name || $select.selected}}</ui-select-match>
+            <ui-select-choices repeat="item in queryAttrList  track by $index" refresh="searchKeyword($select.search)" refresh-delay="0">
+                <div ng-bind-html="item.name | highlight: $select.search"></div>
+                <!-- <small ng-bind-html="item.group_name | highlight: $select.search "></small> -->
+            </ui-select-choices>
+        </ui-select>
+    </td>
+    <td class="item-3">
+        <ui-select theme="selectize" ng-model="searchItem.operation" title="">
+            <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
+            <ui-select-choices repeat="item.val as item in operationList">
+                <div ng-bind-html="item.title"></div>
+            </ui-select-choices>
+        </ui-select>
+    </td>
+    <td class="item-4">
+        <input ng-model="searchItem.keyword" type="text" />
+    </td>
+    <td class="item-5">
+        <a class="btn btn-default" ng-show="searchItemTotal > 1" ng-click="deleteAction()">-</button>
+    </td>
+</tr>

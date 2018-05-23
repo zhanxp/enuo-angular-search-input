@@ -1,0 +1,18 @@
+<div id="searchWrap" class="searchWrap">
+    <div class="searchInput">
+        <div class="searchPro">
+            <form>
+                <table>
+                    <tr ng-repeat="item in queryProList" search-pro-item search-item="item" search-item-index="$index" search-item-total="queryProList.length"
+                        add-action="addProItem()" delete-action="deleteProItem(item)" config="config"></tr>
+                </table>
+                <div class="text-center">
+                    <button class="btn btn-search" ng-click="execProSearch()">
+                        <i class="ion-ios-search-strong"></i> 搜索</button>
+                    <button class="btn btn-reset" ng-click="resetProSearch()">
+                        <i class="ion-ios-undo"></i> 重置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

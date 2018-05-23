@@ -1,0 +1,25 @@
+{
+    "name": "angular-search-input",
+    "homepage": "https://github.com/zhanxp/angular-search-input",
+    "authors": [
+        "zhanxp@me.com"
+    ],
+    "description": "",
+    "main": [
+        "./dist/search-input.js",
+        "./dist/search-input.css"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "angular": "^1.5.3",
+        "angular-ui-select": "0.19.4"
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit" />
+    <title>search input test</title>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- <link rel="stylesheet" href="https://v3.bootcss.com/dist/css/bootstrap.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+    <!-- <script src="https://v3.bootcss.com/dist/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="./bower_components/angular-ui-select/dist/select.css" />
+    <script src="./bower_components/angular-ui-select/dist/select.js"></script>
+    <link rel="stylesheet" href="./dist/search-input.css" />
+    <script src="./dist/search-input.js"></script>
+</head>
+
+<body ng-controller="TestController">
+    <search-input config="searchConfig"></search-input>
+
+
+    <script type="text/javascript">
+        angular.module('app', ['search.input'])
+            .controller("TestController", ['$scope', '$filter', '$compile', function ($scope, $filter, $compile) {
+                $scope.searchConfig = {
+                    searchInputField: [
+                        {
+                            name: "name",
+                            key: "key",
+                            val: "val"
+                        }
+                    ],
+                    onClickTab: function (params) {
+                        console.info(JSON.stringify(params));
+                    },
+                    onClickSearch: function (params) {
+                        console.info(JSON.stringify(params));
+                    }
+                };
+                // $scope.list = [];
+                // $scope.gridConfig = {
+                //     pkid: 'InfoID',
+                //     loading: true,
+                //     style: {
+                //         contentStyle: {
+                //             height: '200px'
+                //         },
+                //     },
+                //     page: {
+                //         pageIndex: 1,
+                //         pageSize: 10,
+                //         total: 10,
+                //         callback: function (page) {
+                //             $scope.loadData(page);
+                //         },
+                //     },
+                //     query: {
+                //         action: {
+                //             callback: function (query) {
+                //                 $scope.loadData();
+                //             }
+                //         },
+                //         items: [{
+                //             key: 'Status',
+                //             value: 1,
+                //         }, {
+                //             key: 'ClassID',
+                //             type: 'select',
+                //             display: '全部分类',
+                //             value: '',
+                //             options: [{
+                //                 name: '分类1',
+                //                 value: 1
+                //             }, {
+                //                 name: '分类2',
+                //                 value: 2
+                //             }],
+                //         }, {
+                //             key: 'Title',
+                //             type: 'input',
+                //             value: '',
+                //             placeholder: '请输入关键字'
+                //         }]
+                //     },
+                //     tool: {
+                //         items: [{
+                //             name: '添加',
+                //             icon: 'glyphicon glyphicon-plus',
+                //             cssClass: 'text-success',
+                //             click: function (selectItems) {
+                //                 $scope.fnShowFrom();
+                //             }
+                //         }, {
+                //             name: '删除',
+                //             icon: 'glyphicon glyphicon-remove',
+                //             cssClass: 'text-danger',
+                //             click: function (selectItems) {
+                //                 $scope.fnUpdateStatus(selectItems);
+                //             }
+                //         }, {
+                //             name: '刷新',
+                //             icon: 'glyphicon glyphicon-repeat',
+                //             cssClass: 'text-info',
+                //             click: function (selectItems) {
+                //                 $scope.loadData();
+                //             }
+                //         },]
+                //     },
+                //     columns: [{
+                //         name: '标题',
+                //         key: 'Title'
+                //     }, {
+                //         name: 'NoKey',
+                //     }, {
+                //         name: 'Empty',
+                //         key: 'Empty'
+                //     }, {
+                //         name: 'Null',
+                //         key: 'Null'
+                //     }, {
+                //         name: '时间',
+                //         key: 'CreateDate',
+                //         format: function (value) {
+                //             return $filter('date')(value, 'yyyy-MM-dd');
+                //         }
+                //     }, {
+                //         name: '修改',
+                //         width: '100px',
+                //         template: 'edit',
+                //         click: function (value, item) {
+                //             $scope.fnShowFrom(item);
+                //         }
+                //     }, {
+                //         name: '删除',
+                //         width: '100px',
+                //         template: 'delete',
+                //         format: function (value, item) {
+                //             return item.Status == 1 ? "删除" : "还原";
+                //         },
+                //         click: function (value, item) {
+                //             var ids = [];
+                //             ids.push(item.InfoID);
+                //             $scope.fnUpdateStatus(ids);
+                //         }
+                //     }]
+                // };
+
+                // $scope.fnAlert = function (v) {
+                //     alert(v);
+                // }
+
+                // $scope.loadData = function (page) {
+                //     var query = {};
+                //     angular.forEach($scope.gridConfig.query.items, function (data, index, array) {
+                //         query[data.key] = data.value;
+                //     });
+                //     console.log(query);
+
+                //     page = page || $scope.gridConfig.page.pageIndex;
+
+                //     $scope.gridConfig.loading = true;
+
+                //     $scope.list = [];
+                //     for (var i = 0; i < 10; i++) {
+                //         var id = (page - 1) * 10 + i;
+                //         var item = {};
+                //         item.InfoID = id;
+                //         item.Title = "Title " + id;
+                //         item.Empty = '';
+                //         item.Null = null;
+                //         item.CreateDate = new Date();
+                //         item.Status = 1;
+                //         $scope.list.push(item);
+                //     }
+                //     $scope.gridConfig.page.total = 100;
+
+                //     $scope.gridConfig.loading = false;
+                // }
+
+                // $scope.fnUpdateStatus = function (ids) {
+                //     console.log("del " + JSON.stringify(ids));
+                // };
+
+                // $scope.fnShowFrom = function (item) {
+                //     // $scope.gridConfig.style.contentStyle.height = '300px';
+                //     if (item) {
+                //         console.log(item);
+                //     } else {
+                //         console.log('add');
+                //     }
+                // };
+
+                // $scope.loadData();
+
+            }]);
+    </script>
+</body>
+
+</html>
