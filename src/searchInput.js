@@ -9,8 +9,6 @@ angular.module('search.input')
             },
             /** @ngInject */
             controller: function ($rootScope, $scope, $element, $attrs, $localStorage) {
-                $scope.config.onClickTab();
-
                 $scope.addProItem = function () {
                     $scope.queryProList.push({
                         logic: 'and',
@@ -24,9 +22,7 @@ angular.module('search.input')
                 };
 
                 $scope.execProSearch = function () {
-                    $localStorage["queryProList" + $scope.tabTypetabType] = $scope.queryProList;
-                    // $localStorage.queryProList = $scope.queryProList;
-                    //console.log($scope.queryProList);
+                    $localStorage["queryProList" + $scope.cacheType || ""] = $scope.queryProList;
                     var queryLang = '';
                     angular.forEach($scope.queryProList, function (data, index) {
                         if (data.operation && data.keyword && data.attr && data.attr.val) {
@@ -55,9 +51,8 @@ angular.module('search.input')
                         }
                     });
                     queryLang = $.trim(queryLang)
-                    var execQuery = { queryLang: queryLang, queryKeyWord: '' };
+                    var execQuery = { query: queryLang, queryKeyWord: '' };
                     $localStorage.execQuery = execQuery;
-                    // $scope.searchAction({ q: execQuery });
                     $scope.config.onClickSearch(execQuery);
                 };
 
@@ -67,25 +62,23 @@ angular.module('search.input')
                         logic: 'and',
                         operation: '='
                     });
-                    // $localStorage.queryProList = $scope.queryProList;
-                    $localStorage["queryProList" + $scope.tabType || ""] = $scope.queryProList;
+                    $localStorage["queryProList" + $scope.cacheType || ""] = $scope.queryProList;
                 };
 
                 $scope.config.onClickTab = function (params) {
-                    $localStorage["queryProList" + $scope.tabType || ""] = $scope.queryProList || [];
-                    console.info(JSON.stringify(params));
                     if (params) {
-                        // var params = JSON.parse(paramsStr);
-                        $scope.tabType = params.tabType;
+                        $localStorage["queryProList" + $scope.cacheType || ""] = $scope.queryProList || [];
+                        $scope.cacheType = params.cacheType;
                     }
-                    $scope.queryProList = $localStorage["queryProList" + $scope.tabType || ""] || [];
+                    $scope.queryProList = $localStorage["queryProList" + $scope.cacheType || ""] || [];
                     if ($scope.queryProList.length <= 0) {
                         $scope.queryProList.push({
                             logic: 'and',
                             operation: '='
                         });
                     }
-                }
+                };
+                $scope.config.onClickTab();
             }
         };
     });
