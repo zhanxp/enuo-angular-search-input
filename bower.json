@@ -2,7 +2,7 @@
     "name": "angular-search-input",
     "homepage": "https://github.com/kuizhaoyi/angular-search-input",
     "authors": [
-        "zhanxp@me.com"
+        "kuizhaoyi"
     ],
     "description": "",
     "main": [
@@ -20,6 +20,6 @@
     "dependencies": {
         "bootstrap": "^3.3.7",
         "angular": "^1.5.3",
-        "angular-ui-select": "0.19.4"
+        "angular-ui-select": "0.19.8"
     }
 }
