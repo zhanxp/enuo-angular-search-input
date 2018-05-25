@@ -6,7 +6,7 @@
         <span ng-show="searchItemIndex>0">
                 <ui-select theme="selectize" ng-model="searchItem.logic" title="">
                     <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
-                    <ui-select-choices repeat="item.val as item in logicList">
+                    <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?logicListMongo:logicList)">
                         <div ng-bind-html="item.title"></div>
                     </ui-select-choices>
                 </ui-select>
@@ -25,7 +25,7 @@
     <td class="item-3">
         <ui-select theme="selectize" ng-model="searchItem.operation" title="">
             <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
-            <ui-select-choices repeat="item.val as item in operationList">
+            <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?operationListMongo:operationList)">
                 <div ng-bind-html="item.title"></div>
             </ui-select-choices>
         </ui-select>

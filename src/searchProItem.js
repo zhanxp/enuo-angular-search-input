@@ -23,11 +23,26 @@ angular.module('search.input')
                     { title: '包含', val: 'like' },
                 ];
 
+                $scope.operationListMongo = [
+                    { title: '等于', val: '=' },
+                    { title: '大于', val: '>' },
+                    { title: '小于', val: '<' },
+                    { title: '大于等于', val: '>=' },
+                    { title: '小于等于', val: '<=' },
+                    { title: '包含', val: 'like' },
+                    { title: '不等于', val: '!=' },
+                ];
+
                 $scope.logicList = [
                     { title: '与', val: 'and' },
                     { title: '或', val: 'or' },
                     { title: '与非', val: 'and not' },
                     { title: '或非', val: 'or not' },
+                ];
+
+                $scope.logicListMongo = [
+                    { title: '与', val: 'and' },
+                    { title: '或', val: 'or' }
                 ];
 
                 $scope.queryAttrList = [];
@@ -44,6 +59,27 @@ angular.module('search.input')
                             });
                         }
                     }
+                    // var params = {
+                    //     keyword: keyword,
+                    //     projectConfigId: $scope.tabIndex,
+                    //     projectId: $scope.projectId
+                    // };
+                    // cdrSrv.searchKeyword(params).success(function (res) {
+                    //     if (res && res.success) {
+                    //         var results = res.data || [];
+                    //         $scope.queryAttrList = [];
+                    //         angular.forEach(results, function (data) {
+                    //             $scope.queryAttrList.push({
+                    //                 name: data.title,
+                    //                 // group_name: data.title,
+                    //                 key: data.field_name
+                    //                 // group_key: data.group_key,
+                    //                 // val: data.group_key + '.' + data.key
+                    //             });
+                    //         });
+                    //     }
+                    // });
+                    // console.log("##-->>queryAttrList:" + JSON.stringify($scope.queryAttrList));
                 };
             }
         };
