@@ -22,7 +22,7 @@ angular.module('search.input')
                 };
 
                 $scope.execProSearch = function () {
-                    $localStorage["queryProList" + $scope.cacheType || ""] = $scope.queryProList;
+                    $localStorage["queryProList" + $scope.config.cacheType || ""] = $scope.queryProList;
                     var queryLang = '';
                     var queryMongo = {};
                     var queryOr=[];
@@ -136,15 +136,15 @@ angular.module('search.input')
                         logic: 'and',
                         operation: '='
                     });
-                    $localStorage["queryProList"+$scope.cacheType||""] = $scope.queryProList;
+                    $localStorage["queryProList"+$scope.config.cacheType||""] = $scope.queryProList;
                 };
 
                 $scope.config.onClickTab = function(params) {
                     if (params){
-                        $localStorage["queryProList"+$scope.cacheType||""] = $scope.queryProList||[];
-                        $scope.cacheType = params.cacheType;
+                        $localStorage["queryProList"+$scope.config.cacheType||""] = $scope.queryProList||[];
+                        $scope.config.cacheType = params.cacheType;
                     }
-                    $scope.queryProList = $localStorage["queryProList" + $scope.cacheType||""] || [];
+                    $scope.queryProList = $localStorage["queryProList" + $scope.config.cacheType||""] || [];
                     if ($scope.queryProList.length <= 0) {
                         $scope.queryProList.push({
                             logic: 'and',
@@ -152,7 +152,7 @@ angular.module('search.input')
                         });
                     }
                 };
-                // $scope.config.onClickTab();
+                $scope.config.onClickTab();
             }
         };
     });
