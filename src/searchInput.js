@@ -152,7 +152,7 @@ angular.module('search.input')
                         });
                     }
                 };
-                $scope.config.onClickTab();
+                // $scope.config.onClickTab();
             }
         };
     });
