@@ -1,6 +1,6 @@
 .searchWrap {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-bottom: 10px;
   padding-top: 10px;
   background-color: #fff; }
@@ -75,7 +75,7 @@
     .searchInput .searchPro .item-1 {
       width: 70px; }
     .searchInput .searchPro .item-2 {
-      width: 160px; }
+      width: 200px; }
     .searchInput .searchPro .item-3 {
       width: 100px; }
     .searchInput .searchPro .item-4 input {

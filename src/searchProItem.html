@@ -18,7 +18,7 @@
             <ui-select-match placeholder="输入要搜索的字段">{{$select.selected.name || $select.selected}}</ui-select-match>
             <ui-select-choices repeat="item in queryAttrList  track by $index" refresh="searchKeyword($select.search)" refresh-delay="0">
                 <div ng-bind-html="item.name | highlight: $select.search"></div>
-                <!-- <small ng-bind-html="item.group_name | highlight: $select.search "></small> -->
+                <small ng-bind-html="item.remark"></small>
             </ui-select-choices>
         </ui-select>
     </td>
