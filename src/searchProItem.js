@@ -21,6 +21,8 @@ angular.module('search.input')
                     { title: '大于等于', val: '>=' },
                     { title: '小于等于', val: '<=' },
                     { title: '包含', val: 'like' },
+                    { title: '不为空', val: "is not null" },
+                    { title: '为空', val: "is null" },
                 ];
 
                 $scope.operationListMongo = [
