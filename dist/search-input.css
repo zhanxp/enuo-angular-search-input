@@ -75,7 +75,10 @@
     .searchInput .searchPro .item-1 {
       width: 70px; }
     .searchInput .searchPro .item-2 {
-      width: 200px; }
+      width: 180px; }
+      .searchInput .searchPro .item-2 small {
+        font-size: 5px;
+        color: #808080; }
     .searchInput .searchPro .item-3 {
       width: 100px; }
     .searchInput .searchPro .item-4 input {

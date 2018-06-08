@@ -121,7 +121,11 @@ $main-deep-color: #5479EB;
             width: 70px;
         }
         .item-2 {
-            width: 200px;
+            width: 180px;
+            small {
+                font-size: 5px;
+                color: #808080;
+            }
         }
         .item-3 {
             width: 100px;
