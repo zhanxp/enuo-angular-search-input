@@ -48,7 +48,7 @@ angular.module('search.input')
                                     item += ' ' + operation;
                                     queryLang += item;
                                 } else if (data.operation == "is null") {
-                                    operation = "is null and " + data.attr.val + " = ''";
+                                    operation = "is null or " + data.attr.val + " = ''";
                                     item += ' ' + operation;
                                     queryLang += item;
                                 } else if (data.keyword){
