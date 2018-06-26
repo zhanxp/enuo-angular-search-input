@@ -1,5 +1,5 @@
 .searchWrap {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   background-color: #fff; }
   .searchWrap p.hot {
     padding: 10px 0px; }
@@ -53,60 +53,18 @@
   .searchInput .searchPro {
     border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 6px; }
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px #ccc; }
+    .searchInput .searchPro .searchProItem2 {
+      border: 1px solid rgba(204, 204, 204, 0);
+      padding-top: 5px; }
     .searchInput .searchPro .searchProItem {
       border: 1px solid #ccc;
-      padding-left: 5px;
-      padding-right: 5px;
       padding-bottom: 0px;
-      padding-top: 2px;
+      padding-top: 5px;
       margin-bottom: 5px;
-      border-radius: 6px; }
-      .searchInput .searchPro .searchProItem table {
-        width: 100%; }
-        .searchInput .searchPro .searchProItem table td {
-          vertical-align: top;
-          padding-left: 2px; }
-      .searchInput .searchPro .searchProItem input[type="search"], .searchInput .searchPro .searchProItem input[type="text"] {
-        height: auto; }
-      .searchInput .searchPro .searchProItem input[type="text"] {
-        border: 1px solid #ccc;
-        border-radius: 5px 5px 5px 5px; }
-      .searchInput .searchPro .searchProItem .form-group {
-        clear: both; }
-      .searchInput .searchPro .searchProItem .item-0 {
-        width: 60px;
-        text-align: right; }
-      .searchInput .searchPro .searchProItem .item-1 {
-        width: 70px; }
-      .searchInput .searchPro .searchProItem .item-2 {
-        width: 200px; }
-        .searchInput .searchPro .searchProItem .item-2 small {
-          font-size: 12px;
-          color: #808080; }
-      .searchInput .searchPro .searchProItem .item-3 {
-        width: 100px; }
-      .searchInput .searchPro .searchProItem .item-4 input {
-        width: 100%;
-        outline: none;
-        line-height: 24px;
-        padding-left: 5px;
-        padding-right: 5px; }
-      .searchInput .searchPro .searchProItem .item-5 {
-        width: 80px; }
-      .searchInput .searchPro .searchProItem .btn {
-        cursor: pointer;
-        padding: 4px 10px;
-        background-color: #ececec;
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-        border: 1px solid #d4d4d4; }
-      .searchInput .searchPro .searchProItem .text-center {
-        text-align: center; }
-      .searchInput .searchPro .searchProItem .btn.btn-search {
-        background-color: #5479eb;
-        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7797fb), to(#5479eb));
-        border: 1px solid #5479eb;
-        color: #fff; }
+      border-radius: 6px;
+      box-shadow: 1px 1px 5px #ccc; }
     .searchInput .searchPro table {
       width: 100%; }
       .searchInput .searchPro table td {
