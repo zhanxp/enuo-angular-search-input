@@ -3,7 +3,7 @@
         <div class="searchPro">
             <form>
                 <table>
-                    <tr ng-repeat="item in queryProList" search-pro-item search-item="item" search-item-index="$index" search-item-total="queryProList.length"
+                    <tr ng-repeat="item in queryProList" search-pro search-item-pro="item" search-item-index-pro="$index" search-item-total-pro="queryProList.length"
                         add-action="addProItem()" delete-action="deleteProItem(item)" config="config"></tr>
                 </table>
                 <div class="text-center">
