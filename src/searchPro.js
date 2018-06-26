@@ -1,15 +1,9 @@
-(function () {
-    'use strict';
-    //
-    angular.module('app.statistics')
-        .directive('searchPro', searchPro);
-
-    /** @ngInject */
-    function searchPro($log, $timeout, $rootScope, $document, $compile, $localStorage) {
+angular.module('search.input')
+    .directive('searchPro', function () {
 
         return {
             restrict: 'EA',
-            templateUrl: 'controller/search/directives/searchPro.html',
+            templateUrl: 'search/input/templates/searchPro.html',
             replace: true,
             scope: {
                 addAction: '&',
@@ -37,5 +31,4 @@
                 };
             }
         };
-    }
-})();
+    });
