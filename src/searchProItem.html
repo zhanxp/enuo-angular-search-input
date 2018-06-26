@@ -1,6 +1,6 @@
 <tr class="form-group">
     <td class="item-0">
-        <a class="btn btn-default" ng-show="searchItemIndex > 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()">+</a>
+        <a class="btn icon ion-android-add" ng-show="searchItemIndex > 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()"></a>
     </td>
     <td class="item-1">
         <span ng-show="searchItemIndex>0">
@@ -11,7 +11,7 @@
                     </ui-select-choices>
                 </ui-select>
          </span>
-        <a class="btn btn-default" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()">+</a>
+        <a class="btn icon ion-android-add" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()"></a>
     </td>
     <td class="item-2">
         <ui-select theme="selectize" ng-model="searchItem.attr" title="输入要搜索的字段">
@@ -34,6 +34,6 @@
         <input ng-model="searchItem.keyword" type="text" />
     </td>
     <td class="item-5">
-        <a class="btn btn-default" ng-show="searchItemTotal > 1" ng-click="deleteAction()">-</button>
+        <a class="text-red btn icon ion-android-remove" ng-show="searchItemTotal > 1" ng-click="deleteAction()"></a>
     </td>
 </tr>
