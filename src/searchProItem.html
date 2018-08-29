@@ -7,7 +7,8 @@
                 <ui-select theme="selectize" ng-model="searchItem.logic" title="">
                     <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
                     <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?logicListMongo:logicList)">
-                        <div ng-bind-html="item.title"></div>
+                        <!-- <div ng-bind-html="item.title"></div> -->
+                        <div>{{item.title}}</div>
                     </ui-select-choices>
                 </ui-select>
          </span>
@@ -17,8 +18,10 @@
         <ui-select theme="selectize" ng-model="searchItem.attr" title="输入要搜索的字段">
             <ui-select-match placeholder="输入要搜索的字段">{{$select.selected.name || $select.selected}}</ui-select-match>
             <ui-select-choices repeat="item in queryAttrList  track by $index" refresh="searchKeyword($select.search)" refresh-delay="0">
-                <div ng-bind-html="item.name | highlight: $select.search"></div>
-                <small ng-bind-html="item.remark"></small>
+                <!-- <div ng-bind-html="item.name | highlight: $select.search">{{item.name | highlight: $select.search}}</div>
+                <small ng-bind-html="item.remark">{{item.remark}}</small> -->
+                <div bind-html-compile="item.name | highlight: $select.search"></div>
+                <small>{{item.remark}}</small>
             </ui-select-choices>
         </ui-select>
     </td>
@@ -26,7 +29,7 @@
         <ui-select theme="selectize" ng-model="searchItem.operation" title="">
             <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
             <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?operationListMongo:operationList)">
-                <div ng-bind-html="item.title"></div>
+                <div>{{item.title}}</div>
             </ui-select-choices>
         </ui-select>
     </td>
