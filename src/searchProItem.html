@@ -36,7 +36,7 @@
         <input ng-show="!searchItem.type && searchItem.items.length == 0" ng-model="searchItem.keyword" type="text" />
         <div ng-show="searchItem.type && searchItem.type == 'date'" class="has-feedback">
             <input class='form-control' ng-click="startDateOpened=true" is-open="startDateOpened" uib-datepicker-popup datepicker-options="dateOptions"
-                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword" placeholder="" type="text" style="padding-bottom:2px;"
+                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword" placeholder="" type="text" style="height:30px;"
             />
             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         </div>
