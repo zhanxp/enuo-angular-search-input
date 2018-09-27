@@ -4,15 +4,16 @@
     </td>
     <td class="item-1">
         <span ng-show="searchItemIndex>0">
-                <ui-select theme="selectize" ng-model="searchItem.logic" title="">
-                    <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
-                    <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?logicListMongo:logicList)">
-                        <!-- <div ng-bind-html="item.title"></div> -->
-                        <div>{{item.title}}</div>
-                    </ui-select-choices>
-                </ui-select>
-         </span>
-        <a class="btn icon ion-android-add" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()"></a>
+            <ui-select theme="selectize" ng-model="searchItem.logic" title="">
+                <ui-select-match placeholder="">{{$select.selected.title}}</ui-select-match>
+                <ui-select-choices repeat="item.val as item in (config.dbType&&config.dbType=='mongo'?logicListMongo:logicList)">
+                    <!-- <div ng-bind-html="item.title"></div> -->
+                    <div>{{item.title}}</div>
+                </ui-select-choices>
+            </ui-select>
+        </span>
+        <a class="btn icon ion-android-add" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1"
+            ng-click="addAction()"></a>
     </td>
     <td class="item-2">
         <ui-select theme="selectize" ng-model="searchItem.attr" title="输入要搜索的字段">
@@ -34,7 +35,12 @@
         </ui-select>
     </td>
     <td class="item-4">
-        <input ng-model="searchItem.keyword" type="text" />
+        <input ng-show="!searchItem.type" ng-model="searchItem.keyword" type="text" />
+        <div ng-show="searchItem.type && searchItem.type == 'date'" class="has-feedback">
+            <input class='form-control' ng-click="mp.startDateOpened=true" is-open="mp.startDateOpened" uib-datepicker-popup datepicker-options="dateOptions"
+                ng-model="searchItem.keyword" ng-value="searchItem.keyword" placeholder="" />
+            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+        </div>
     </td>
     <td class="item-5">
         <a class="text-red btn icon ion-android-remove" ng-show="searchItemTotal > 1" ng-click="deleteAction()"></a>

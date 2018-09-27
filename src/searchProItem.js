@@ -61,27 +61,6 @@ angular.module('search.input')
                             });
                         }
                     }
-                    // var params = {
-                    //     keyword: keyword,
-                    //     projectConfigId: $scope.tabIndex,
-                    //     projectId: $scope.projectId
-                    // };
-                    // cdrSrv.searchKeyword(params).success(function (res) {
-                    //     if (res && res.success) {
-                    //         var results = res.data || [];
-                    //         $scope.queryAttrList = [];
-                    //         angular.forEach(results, function (data) {
-                    //             $scope.queryAttrList.push({
-                    //                 name: data.title,
-                    //                 // group_name: data.title,
-                    //                 key: data.field_name
-                    //                 // group_key: data.group_key,
-                    //                 // val: data.group_key + '.' + data.key
-                    //             });
-                    //         });
-                    //     }
-                    // });
-                    // console.log("##-->>queryAttrList:" + JSON.stringify($scope.queryAttrList));
                 };
             }
         };
