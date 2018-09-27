@@ -70,9 +70,9 @@
       .searchInput .searchPro table td {
         vertical-align: top;
         padding-left: 2px; }
-    .searchInput .searchPro input[type="search"], .searchInput .searchPro input[type="text"] {
+    .searchInput .searchPro input[type="search"], .searchInput .searchPro input[type="text"], .searchInput .searchPro input[type="number"] {
       height: auto; }
-    .searchInput .searchPro input[type="text"] {
+    .searchInput .searchPro input[type="text"], .searchInput .searchPro input[type="number"] {
       border: 1px solid #ccc;
       border-radius: 5px 5px 5px 5px; }
     .searchInput .searchPro .form-group {

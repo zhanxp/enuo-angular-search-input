@@ -13,7 +13,7 @@ angular.module('search.input')
                 config: '='
             },
             /** @ngInject */
-            controller: function ($rootScope, $scope, $element, $attrs) {
+            controller: function ($rootScope, $scope, $element, $attrs, $filter) {
                 $scope.operationList = [
                     { title: '等于', val: '=' },
                     { title: '大于', val: '>' },
@@ -62,6 +62,16 @@ angular.module('search.input')
                         }
                     }
                 };
+
+                $scope.fnSelect = function ($item, $model) {
+                    $scope.searchItem.type = $item.type || "";
+                    $scope.searchItem.items = $item.items || [];
+                };
+                $scope.$watchCollection('searchItem', function (n, o) {
+                    if ($scope.searchItem.type && $scope.searchItem.type == "date" && $scope.searchItem.keyword_date) {
+                        $scope.searchItem.keyword = $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd');
+                    }
+                });
             }
         };
     });

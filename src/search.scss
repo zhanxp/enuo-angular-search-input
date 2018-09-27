@@ -95,10 +95,10 @@ $main-deep-color: #5479EB;
                 padding-left: 2px;
             }
         }
-        input[type="search"],input[type="text"]{
+        input[type="search"],input[type="text"],input[type="number"]{
             height: auto;
         }
-        input[type="text"]{
+        input[type="text"],input[type="number"]{
             border: 1px solid #ccc;
             border-radius: 5px 5px 5px 5px;
         }
@@ -152,132 +152,4 @@ $main-deep-color: #5479EB;
             color: #fff;
         }
     }
-
-    // .help {
-    //     position: absolute;
-    //     top: 0px;
-    //     right: 0px;
-    // }
-    // .autocomplete {
-    //     position: absolute;
-    //     top: 44px - 1px;
-    //     left: 0px;
-    //     right: 110px + 44px;
-    //     border: 1px solid $border-color;
-    //     box-shadow: 4px 4px 4px 0px rgba(35, 40, 69, 0.53); //$deep-color;
-    //     border-radius: 0px 0px 3px 3px;
-    //     background-color: #fff;
-    //     z-index: 22;
-    //     ul {
-    //         margin: 0px;
-    //         padding: 0px;
-    //         li {
-    //             list-style: none;
-    //             padding: 10px;
-    //             margin: 0px;
-    //             line-height: 20px;
-    //             cursor: pointer;
-    //             @include clearfix;
-    //             &:hover,
-    //             &.active {
-    //                 background-color: $main-light-color;
-    //                 color: #fff;
-    //                 span {
-    //                     color: #fff;
-    //                     i {
-    //                         color: #ccc;
-    //                     }
-    //                 }
-    //             }
-    //             label {
-    //                 margin: 0px;
-    //                 span.range {
-    //                     color: $main-deep-gray-color;
-    //                     font-size: 12px;
-    //                 }
-    //             }
-    //             small {
-    //                 color: #808080;
-    //             }
-    //             .pullRight {
-    //                 float: right;
-    //                 font-size: 14px;
-    //                 color: $main-deep-gray-color;
-    //                 i {
-    //                     font-size: 12px;
-    //                     margin-right: 5px;
-    //                     color: #808080;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }
-
-// .timeList {
-//     padding: 20px;
-//     background-color: #F2F4FA;
-//     h4 {
-//         position: relatvie;
-//         font-size: 16px;
-//         border-bottom: 1px solid $border-color;
-//         padding-bottom: 10px;
-//         .more {
-//             float: right;
-//             font-size: 14px;
-//             font-weight: normal;
-//             text-decoration: none;
-//             color: #A4AABF;
-//         }
-//     }
-//     .timeBar {
-//         button {
-//             background-color: transparent;
-//             border: none;
-//             outline: none;
-//             margin: 5px 10px;
-//             &:first-child {
-//                 margin-left: 0px;
-//             }
-//             &:last-child {
-//                 margin-right: 0px;
-//             }
-//             &.active {
-//                 background-color: $main-deep-gray-color;
-//                 border-radius: 20px;
-//                 padding: 5px 10px;
-//                 font-size: 14px;
-//                 color: #fff;
-//             }
-//         }
-//     }
-//     .list {
-//         margin-top: 10px;
-//         background-color: #fff;
-//         .table {
-//             tbody tr {
-//                 &:hover {
-//                     background-color: $content-bg-color;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// .resultList {
-//     padding: 20px;
-//     background-color: #F2F4FA;
-//     h4 {
-//         position: relatvie;
-//         font-size: 16px;
-//         border-bottom: 1px solid $border-color;
-//         padding-bottom: 10px;
-//         .more {
-//             float: right;
-//             font-size: 14px;
-//             font-weight: normal;
-//             text-decoration: none;
-//             color: #A4AABF;
-//         }
-//     }
-// }
