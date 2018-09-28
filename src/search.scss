@@ -135,17 +135,33 @@ $main-deep-color: #5479EB;
         .item-5 {
             width: 80px;
         }
-        .btn {
+        // .btn {
+        //     cursor: pointer;
+        //     padding: 4px 10px;
+        //     background-color: #ececec;
+        //     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+        //     border: 1px solid #d4d4d4;
+        // }
+        .text-center {
+            text-align: center;
+        }
+        .btn.btn-add {
             cursor: pointer;
             padding: 4px 10px;
             background-color: #ececec;
             background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
             border: 1px solid #d4d4d4;
         }
-        .text-center {
-            text-align: center;
+        .btn.btn-reset {
+            cursor: pointer;
+            padding: 4px 10px;
+            background-color: #ececec;
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+            border: 1px solid #d4d4d4;
         }
         .btn.btn-search {
+            cursor: pointer;
+            padding: 4px 10px;
             background-color: #5479eb;
             background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7797fb), to(#5479eb));
             border: 1px solid #5479eb;

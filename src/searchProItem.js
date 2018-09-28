@@ -64,13 +64,18 @@ angular.module('search.input')
                 };
 
                 $scope.fnSelect = function ($item, $model) {
-                    $scope.searchItem.type = $item.type || "";
-                    $scope.searchItem.items = $item.items || [];
                     $scope.searchItem.keyword = "";
+                    $scope.searchItem.keyword_date = "";
+                    $scope.searchItem.keyword_number = "";
                 };
                 $scope.$watchCollection('searchItem', function (n, o) {
-                    if ($scope.searchItem.type && $scope.searchItem.type == "date") {
-                        $scope.searchItem.keyword = $scope.searchItem.keyword_date ? $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd') : "";
+                    if ($scope.searchItem.attr && $scope.searchItem.attr.type) {
+                        if ($scope.searchItem.attr.type == "date") {
+                            $scope.searchItem.keyword = $scope.searchItem.keyword_date ? $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd') : "";
+                        }
+                        if ($scope.searchItem.attr.type == "number") {
+                            $scope.searchItem.keyword = $scope.searchItem.keyword_number;
+                        }
                     }
                 });
             }

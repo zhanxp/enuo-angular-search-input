@@ -1,6 +1,6 @@
 <tr class="form-group">
     <td class="item-0">
-        <a class="btn icon ion-android-add" ng-show="searchItemIndex > 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()"></a>
+        <a class="btn btn-add icon ion-android-add" ng-show="searchItemIndex > 0 && searchItemIndex == searchItemTotal - 1" ng-click="addAction()"></a>
     </td>
     <td class="item-1">
         <span ng-show="searchItemIndex>0">
@@ -12,7 +12,7 @@
                 </ui-select-choices>
             </ui-select>
         </span>
-        <a class="btn icon ion-android-add" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1"
+        <a class="btn btn-add icon ion-android-add" style="float:right" ng-show="searchItemIndex == 0 && searchItemIndex == searchItemTotal - 1"
             ng-click="addAction()"></a>
     </td>
     <td class="item-2">
@@ -33,22 +33,22 @@
         </ui-select>
     </td>
     <td class="item-4">
-        <input ng-show="!searchItem.type && searchItem.items.length == 0" ng-model="searchItem.keyword" type="text" />
-        <div ng-show="searchItem.type && searchItem.type == 'date'" class="has-feedback">
+        <input ng-show="searchItem.attr && !searchItem.attr.type && (!searchItem.attr.items || searchItem.attr.items.length == 0)" ng-model="searchItem.keyword" type="text" style="height:30px;padding-bottom:2px;" />
+        <div ng-show="searchItem.attr && searchItem.attr.type && searchItem.attr.type == 'date'" class="has-feedback">
             <input class='form-control' ng-click="startDateOpened=true" is-open="startDateOpened" uib-datepicker-popup datepicker-options="dateOptions"
-                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword" placeholder="" type="text" style="height:30px;"
+                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword" placeholder="" type="text" style="height:30px;padding-bottom:2px;"
             />
             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         </div>
-        <ui-select ng-show="!searchItem.type && searchItem.items.length > 0" theme="selectize" ng-model="searchItem.keyword" title="">
+        <ui-select ng-show="searchItem.attr && !searchItem.attr.type && searchItem.attr.items && searchItem.attr.items.length > 0" theme="selectize" ng-model="searchItem.keyword" title="">
             <ui-select-match placeholder="">{{$select.selected.name}}</ui-select-match>
-            <ui-select-choices repeat="item.val as item in searchItem.items">
+            <ui-select-choices repeat="item.val as item in searchItem.attr.items">
                 <div bind-html-compile="item.name"></div>
             </ui-select-choices>
         </ui-select>
-        <input ng-show="searchItem.type && searchItem.type == 'number'" ng-model="searchItem.keyword" type="number"/>
+        <input ng-show="searchItem.attr && searchItem.attr.type && searchItem.attr.type == 'number'" ng-model="searchItem.keyword_number" type="number" style="height:30px;padding-bottom:2px;"/>
     </td>
     <td class="item-5">
-        <a class="text-red btn icon ion-android-remove" ng-show="searchItemTotal > 1" ng-click="deleteAction()"></a>
+        <a class="text-red btn btn-add icon ion-android-remove" ng-show="searchItemTotal > 1" ng-click="deleteAction()"></a>
     </td>
 </tr>
