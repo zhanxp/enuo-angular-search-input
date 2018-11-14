@@ -166,7 +166,7 @@ angular.module('search.input')
                     }
                     queryLangPro = $.trim(queryLangPro)
                     // , queryKeyWord: $scope.queryProList
-                    var execQuery = { query: queryLangPro, queryMongo: queryMongo};
+                    var execQuery = { query: queryLangPro, queryMongo: queryMongo, queryKeyWord: $scope.queryProList};
                     $scope.config.onClickSearch(execQuery);
                 };
 
