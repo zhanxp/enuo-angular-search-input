@@ -26,7 +26,7 @@ angular.module('search.input')
 
                 // v2.0.0
                 $scope.execProSearch = function () {
-                    console.info("##-->>execProSearch();" + JSON.stringify($scope.queryProList));
+                    // console.info("##-->>execProSearch();" + JSON.stringify($scope.queryProList));
                     $localStorage["queryProList" + $scope.config.cacheType || ""] = $scope.queryProList;
                     var queryLangPro = '';
                     var queryMongo = {};
@@ -149,7 +149,9 @@ angular.module('search.input')
                             }
                             if (queryOr.length > 0) {
                                 if (logic == "and") {
-
+                                    for (var _index in queryOr) {
+                                        queryMongoOr.push(queryOr[_index]);
+                                    }
                                 } else {
                                     for (var _index in queryOr) {
                                         queryMongoOr.push(queryOr[_index]);

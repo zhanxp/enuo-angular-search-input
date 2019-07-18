@@ -71,10 +71,15 @@ angular.module('search.input')
                 $scope.$watchCollection('searchItem', function (n, o) {
                     if ($scope.searchItem.attr && $scope.searchItem.attr.type) {
                         if ($scope.searchItem.attr.type == "date") {
-                            $scope.searchItem.keyword = $scope.searchItem.keyword_date ? $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd') : "";
+                            $scope.searchItem.keyword_date_value = $scope.searchItem.keyword_date ? $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd') : "";
+                            $scope.searchItem.keyword = $scope.searchItem.keyword_date_value;
                         }
                         if ($scope.searchItem.attr.type == "number") {
                             $scope.searchItem.keyword = $scope.searchItem.keyword_number;
+                        }
+                        if ($scope.searchItem.attr.type == "timestamp") {
+                            $scope.searchItem.keyword_date_value = $scope.searchItem.keyword_date ? $filter('date')($scope.searchItem.keyword_date, 'yyyy-MM-dd') : "";
+                            $scope.searchItem.keyword = $scope.searchItem.keyword_date ? new Date($scope.searchItem.keyword_date).getTime() : "";
                         }
                     }
                 });

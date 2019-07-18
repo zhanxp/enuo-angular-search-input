@@ -33,10 +33,10 @@
         </ui-select>
     </td>
     <td class="item-4">
-        <input ng-show="searchItem.attr && !searchItem.attr.type && (!searchItem.attr.items || searchItem.attr.items.length == 0)" ng-model="searchItem.keyword" type="text" style="height:30px;padding-bottom:2px;" />
-        <div ng-show="searchItem.attr && searchItem.attr.type && searchItem.attr.type == 'date'" class="has-feedback">
+        <input ng-show="searchItem.attr && !searchItem.attr.type && (!searchItem.attr.items || searchItem.attr.items.length == 0)" ng-model="searchItem.keyword_date_value" type="text" style="height:30px;padding-bottom:2px;" />
+        <div ng-show="searchItem.attr && searchItem.attr.type && (searchItem.attr.type == 'date' || searchItem.attr.type == 'timestamp')" class="has-feedback">
             <input class='form-control' ng-click="startDateOpened=true" is-open="startDateOpened" uib-datepicker-popup datepicker-options="dateOptions"
-                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword" placeholder="" type="text" style="height:30px;padding-bottom:2px;"
+                ng-model="searchItem.keyword_date" ng-value="searchItem.keyword_date_value" placeholder="" type="text" style="height:30px;padding-bottom:2px;"
             />
             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
         </div>
