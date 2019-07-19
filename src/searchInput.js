@@ -26,17 +26,20 @@ angular.module('search.input')
 
                 // v2.0.0
                 $scope.execProSearch = function () {
-                    // console.info("##-->>execProSearch();" + JSON.stringify($scope.queryProList));
+                    if ($scope.config.debug) {
+                        console.info("##-->>execProSearch();" + JSON.stringify($scope.queryProList));
+                    }
                     $localStorage["queryProList" + $scope.config.cacheType || ""] = $scope.queryProList;
                     var queryLangPro = '';
                     var queryMongo = {};
                     var queryMongoOr = [];
-                    var queryMongoAnd = {};
+                    var queryMongoAnd = [];
                     angular.forEach($scope.queryProList, function (data, index) {
                         if (data && data.items && data.items.length > 0) {
                             var queryLang = '';
+                            var _queryMongo = {};
                             var queryOr = [];
-                            var queryAnd;
+                            var queryAnd = [];
                             angular.forEach(data.items, function (data, index) {
                                 if (data.operation && data.attr && data.attr.val) {
                                     var item = '';
@@ -115,10 +118,9 @@ angular.module('search.input')
                                                 value = { $regex: data.keyword };
                                             }
                                             if (logic.indexOf("and") != -1) {
-                                                if (!queryAnd) {
-                                                    queryAnd = {};
-                                                }
-                                                queryAnd[key] = value;
+                                                var _temp = {};
+                                                _temp[key] = value;
+                                                queryAnd.push(_temp);
                                             } else if (logic.indexOf("or") != -1) {
                                                 var _temp = {};
                                                 _temp[key] = value;
@@ -137,38 +139,41 @@ angular.module('search.input')
                                     queryLangPro = "(" + queryLang + ")";
                                 }
                             }
-                            var logic = data.logic || "and";
-                            if (queryAnd) {
-                                if (logic == "and") {
-                                    for (var key in queryAnd) {
-                                        queryMongoAnd[key] = queryAnd[key];
-                                    }
-                                } else {
-                                    queryOr.push(queryAnd);
+                            if (queryAnd.length > 0 || queryOr.length > 0) {
+                                if (!_queryMongo["$or"]) {
+                                    _queryMongo["$or"] = [];
                                 }
-                            }
-                            if (queryOr.length > 0) {
+                                if (queryOr.length > 0) {
+                                    _queryMongo["$or"] = queryOr;
+                                }
+                                if (queryAnd.length > 0) {
+                                    _queryMongo["$or"].push({
+                                        "$and": queryAnd
+                                    });
+                                }
+                                var logic = data.logic || "and";
+                                if (!queryMongo["$or"]) {
+                                    queryMongo["$or"] = [];
+                                }
                                 if (logic == "and") {
-                                    for (var _index in queryOr) {
-                                        queryMongoOr.push(queryOr[_index]);
-                                    }
+                                    queryMongoAnd.push(_queryMongo);
                                 } else {
-                                    for (var _index in queryOr) {
-                                        queryMongoOr.push(queryOr[_index]);
-                                    }
+                                    queryMongo["$or"].push(_queryMongo);
                                 }
                             }
                         }
                     });
-                    if (queryMongoAnd) {
-                        queryMongoOr.push(queryMongoAnd);
+                    if (queryMongoAnd.length > 0) {
+                        queryMongo["$or"].push({
+                            "$and": queryMongoAnd
+                        });
                     }
-                    if (queryMongoOr.length > 0) {
-                        queryMongo["$or"] = queryMongoOr;
-                    }
-                    queryLangPro = $.trim(queryLangPro)
-                    // , queryKeyWord: $scope.queryProList
-                    var execQuery = { query: queryLangPro, queryMongo: queryMongo, queryKeyWord: $scope.queryProList};
+                    queryLangPro = $.trim(queryLangPro);
+                    var execQuery = {
+                        query: queryLangPro,
+                        queryMongo: queryMongo,
+                        queryKeyWord: $scope.queryProList
+                    };
                     $scope.config.onClickSearch(execQuery);
                 };
 
@@ -190,7 +195,9 @@ angular.module('search.input')
                         $scope.config.cacheType = params.cacheType;
                     }
                     $scope.queryProList = $localStorage["queryProList" + $scope.config.cacheType || ""] || [];
-                    console.info("##-->>onClickTab();" + JSON.stringify($scope.queryProList));
+                    if ($scope.config.debug) {
+                        console.info("##-->>onClickTab();" + JSON.stringify($scope.queryProList));
+                    }
                     if ($scope.queryProList.length <= 0) {
                         $scope.queryProList.push({
                             logic: 'and',
