@@ -1,11 +1,11 @@
 <tr class="form-group">
-    <td class="item-0">
+    <td ng-if="!config.isOne" class="item-0">
         <div class="searchProItem2">
             <a class="text-green btn btn-add icon ion-plus-round" ng-show="searchItemIndexPro > 0 && searchItemIndexPro == searchItemTotalPro - 1"
                 ng-click="addAction()" style="box-shadow:1px 1px 5px #ccc;"></a>
         </div>
     </td>
-    <td class="item-1">
+    <td ng-if="!config.isOne" class="item-1">
         <div class="searchProItem2">
             <span ng-show="searchItemIndexPro>0">
                 <ui-select theme="selectize" ng-model="searchItemPro.logic" title="">
@@ -27,7 +27,7 @@
             </table>
         </div>
     </td>
-    <td class="item-5">
+    <td ng-if="!config.isOne" class="item-5">
         <div class="searchProItem2">
             <a class="text-red btn btn-add icon ion-close-round" ng-show="searchItemTotalPro > 1" ng-click="deleteAction()" style="box-shadow:1px 1px 5px #ccc;"></a>
         </div>
