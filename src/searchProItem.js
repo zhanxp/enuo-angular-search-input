@@ -34,10 +34,10 @@ angular.module('search.input')
                         title: '小于等于',
                         val: '<='
                     },
-                    {
-                        title: '包含',
-                        val: 'like'
-                    },
+                    // {
+                    //     title: '包含',
+                    //     val: 'like'
+                    // },
                     {
                         title: '不为空',
                         val: "is not null"
