@@ -14,37 +14,93 @@ angular.module('search.input')
             },
             /** @ngInject */
             controller: function ($rootScope, $scope, $element, $attrs, $filter) {
-                $scope.operationList = [
-                    { title: '等于', val: '=' },
-                    { title: '大于', val: '>' },
-                    { title: '小于', val: '<' },
-                    { title: '大于等于', val: '>=' },
-                    { title: '小于等于', val: '<=' },
-                    { title: '包含', val: 'like' },
-                    { title: '不为空', val: "is not null" },
-                    { title: '为空', val: "is null" },
+                $scope.operationList = [{
+                        title: '等于',
+                        val: '='
+                    },
+                    {
+                        title: '大于',
+                        val: '>'
+                    },
+                    {
+                        title: '小于',
+                        val: '<'
+                    },
+                    {
+                        title: '大于等于',
+                        val: '>='
+                    },
+                    {
+                        title: '小于等于',
+                        val: '<='
+                    },
+                    {
+                        title: '包含',
+                        val: 'like'
+                    },
+                    {
+                        title: '不为空',
+                        val: "is not null"
+                    },
+                    // {
+                    //     title: '为空',
+                    //     val: "is null"
+                    // },
                 ];
 
-                $scope.operationListMongo = [
-                    { title: '等于', val: '=' },
-                    { title: '大于', val: '>' },
-                    { title: '小于', val: '<' },
-                    { title: '大于等于', val: '>=' },
-                    { title: '小于等于', val: '<=' },
-                    { title: '包含', val: 'like' },
-                    { title: '不等于', val: '!=' },
+                $scope.operationListMongo = [{
+                        title: '等于',
+                        val: '='
+                    },
+                    {
+                        title: '大于',
+                        val: '>'
+                    },
+                    {
+                        title: '小于',
+                        val: '<'
+                    },
+                    {
+                        title: '大于等于',
+                        val: '>='
+                    },
+                    {
+                        title: '小于等于',
+                        val: '<='
+                    },
+                    {
+                        title: '包含',
+                        val: 'like'
+                    },
+                    {
+                        title: '不等于',
+                        val: '!='
+                    },
                 ];
 
-                $scope.logicList = [
-                    { title: '与', val: 'and' },
-                    { title: '或', val: 'or' },
-                    { title: '与非', val: 'and not' },
-                    { title: '或非', val: 'or not' },
+                $scope.logicList = [{
+                        title: '与',
+                        val: 'and'
+                    },
+                    {
+                        title: '或',
+                        val: 'or'
+                    },
+                    {
+                        title: '非',
+                        val: 'and not'
+                    },
+                    // { title: '或非', val: 'or not' },
                 ];
 
-                $scope.logicListMongo = [
-                    { title: '与', val: 'and' },
-                    { title: '或', val: 'or' }
+                $scope.logicListMongo = [{
+                        title: '与',
+                        val: 'and'
+                    },
+                    {
+                        title: '或',
+                        val: 'or'
+                    }
                 ];
 
                 $scope.queryAttrList = [];
