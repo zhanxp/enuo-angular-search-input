@@ -1,0 +1,205 @@
+// 边框 颜色
+@border-color: #E9ECF4;
+// 主要 深色
+@main-deep-color: #5479EB;
+
+.searchWrap {
+  // padding-left: 10px;
+  // padding-right: 10px;
+  padding-bottom: 5px;
+  // padding-top: 10px;
+  // padding: 10px;
+  background-color: #fff;
+
+  p.hot {
+    padding: 10px 0px;
+
+    span {
+      margin-right: 10px;
+      font-size: 12px;
+      color: #9AA0B4;
+      border-right: 1px solid @border-color;
+      padding-right: 10px;
+
+      &:last-child {
+        border-right: none;
+        padding-right: 0px;
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.searchInput {
+  position: relative;
+
+  .text {
+    width: 100%;
+    padding-right: 75px;
+    border: 1px solid @border-color;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 44px;
+    line-height: 40px;
+    background: #fff;
+    line-height: 20px;
+
+    &.openAutocomplete {
+      border-radius: 5px 5px 5px 0px;
+    }
+  }
+
+  .searchBtn {
+    i {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 75px;
+    height: 44px;
+    background-color: @main-deep-color;
+    border: 1px solid @main-deep-color;
+    border-radius: 0px 5px 5px 0px;
+    outline: none;
+    color: #fff;
+  }
+
+  .searchText {
+    margin-right: 110px;
+    position: relative;
+
+    .text {
+      padding-right: 75px;
+      padding-left: 10px;
+    }
+  }
+
+  .searchPro {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px #ccc;
+
+    .searchProItem2 {
+      border: 1px solid rgba(204, 204, 204, 0);
+      padding-top: 5px;
+    }
+
+    ;
+
+    .searchProItem {
+      border: 1px solid #ccc;
+      // padding-left: 5px;
+      // padding-right: 5px;
+      padding-bottom: 0px;
+      padding-top: 5px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      box-shadow: 1px 1px 5px #ccc;
+    }
+
+    ;
+
+    table {
+      width: 100%;
+
+      td {
+        vertical-align: top;
+        padding-left: 2px;
+      }
+    }
+
+    input[type="search"],
+    input[type="text"],
+    input[type="number"] {
+      height: auto;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      border: 1px solid #ccc;
+      border-radius: 5px 5px 5px 5px;
+    }
+
+    .form-group {
+      clear: both;
+    }
+
+    .item-0 {
+      width: 60px;
+      text-align: right;
+    }
+
+    .item-1 {
+      width: 70px;
+    }
+
+    .item-2 {
+      width: 180px;
+
+      small {
+        font-size: 12px;
+        color: #808080;
+      }
+    }
+
+    .item-3 {
+      width: 100px;
+    }
+
+    .item-4 {
+      input {
+        width: 100%;
+        outline: none;
+        line-height: 24px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    .item-5 {
+      width: 80px;
+    }
+
+    // .btn {
+    //     cursor: pointer;
+    //     padding: 4px 10px;
+    //     background-color: #ececec;
+    //     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+    //     border: 1px solid #d4d4d4;
+    // }
+    .text-center {
+      text-align: center;
+    }
+
+    .btn.btn-add {
+      cursor: pointer;
+      padding: 4px 10px;
+      background-color: #ececec;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+      border: 1px solid #d4d4d4;
+    }
+
+    .btn.btn-reset {
+      cursor: pointer;
+      padding: 4px 10px;
+      background-color: #ececec;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+      border: 1px solid #d4d4d4;
+    }
+
+    .btn.btn-search {
+      cursor: pointer;
+      padding: 4px 10px;
+      background-color: #5479eb;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7797fb), to(#5479eb));
+      border: 1px solid #5479eb;
+      color: #fff;
+    }
+  }
+}
